@@ -1,0 +1,138 @@
+Módulo 3 - Desafío -
+ EJ 1
+Primero creé el repositorio, luego darle contenido a la rama main.
+Luego creé la rama custom-navbar y creé los archivos  Archivorandom.txt , contact.txt , qwerty.txt
+Luego de esto, stashear los archivos( git stash --include-untracked) y cambiarme a la rama main para solucionar el problema.
+Luego de borrar status.js, git add, commit pull y push, me cambio a la rama custom-navbar.
+Hice git stash pop para recuperar los archivos, git add, commit y push origin.
+https://github.com/Federico-Malacalza/WEBSITE
+
+
+EJ 2
+La forma de subir los cambios a la main branch es con git merge front-react. 
+
+https://github.com/Federico-Malacalza/WEBSITE/tree/front-react
+
+Fede@MSI MINGW64 /c/DESARROLLO/bootcamp-java-2023/Desafio 3 (main)
+$ git checkout -b front-react
+Switched to a new branch 'front-react'
+
+Fede@MSI MINGW64 /c/DESARROLLO/bootcamp-java-2023/Desafio 3 (front-react)
+$ vim react.js
+
+Fede@MSI MINGW64 /c/DESARROLLO/bootcamp-java-2023/Desafio 3 (front-react)
+$ git status
+On branch front-react
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        react.js
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Fede@MSI MINGW64 /c/DESARROLLO/bootcamp-java-2023/Desafio 3 (front-react)
+$ git add .
+warning: in the working copy of 'react.js', LF will be replaced by CRLF the next time Git touches it
+
+Fede@MSI MINGW64 /c/DESARROLLO/bootcamp-java-2023/Desafio 3 (front-react)
+$ git commit -m "agregue el archivo react.js"
+[front-react 7c08754] agregue el archivo react.js
+ 1 file changed, 2 insertions(+)
+ create mode 100644 react.js
+
+
+Fede@MSI MINGW64 /c/DESARROLLO/bootcamp-java-2023/Desafio 3 (front-react)
+$ git push
+fatal: The current branch front-react has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin front-react
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+Fede@MSI MINGW64 /c/DESARROLLO/bootcamp-java-2023/Desafio 3 (front-react)
+$ git status
+On branch front-react
+nothing to commit, working tree clean
+
+Fede@MSI MINGW64 /c/DESARROLLO/bootcamp-java-2023/Desafio 3 (front-react)
+$  git branch --set-upstream-to=origin/<branch> front-react
+bash: branch: No such file or directory
+
+Fede@MSI MINGW64 /c/DESARROLLO/bootcamp-java-2023/Desafio 3 (front-react)
+$ git status
+On branch front-react
+nothing to commit, working tree clean
+
+
+Fede@MSI MINGW64 /c/DESARROLLO/bootcamp-java-2023/Desafio 3 (front-react)
+$ git push
+fatal: The current branch front-react has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin front-react
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+Fede@MSI MINGW64 /c/DESARROLLO/bootcamp-java-2023/Desafio 3 (front-react)
+$ git push --set-upstream origin front-react
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 329 bytes | 329.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'front-react' on GitHub by visiting:
+remote:      https://github.com/Federico-Malacalza/WEBSITE/pull/new/front-react
+remote:
+To https://github.com/Federico-Malacalza/WEBSITE.git
+ * [new branch]      front-react -> front-react
+branch 'front-react' set up to track 'origin/front-react'.
+
+Fede@MSI MINGW64 /c/DESARROLLO/bootcamp-java-2023/Desafio 3 (front-react)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Fede@MSI MINGW64 /c/DESARROLLO/bootcamp-java-2023/Desafio 3 (main)
+$ git tag react.js
+
+Fede@MSI MINGW64 /c/DESARROLLO/bootcamp-java-2023/Desafio 3 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+Fede@MSI MINGW64 /c/DESARROLLO/bootcamp-java-2023/Desafio 3 (main)
+$ git push origin --tags
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Federico-Malacalza/WEBSITE.git
+ * [new tag]         react.js -> react.js
+
+Fede@MSI MINGW64 /c/DESARROLLO/bootcamp-java-2023/Desafio 3 (main)
+$ git merge front-react
+Updating 772a9f4..7c08754
+Fast-forward
+ react.js | 2 ++
+ 1 file changed, 2 insertions(+)
+ create mode 100644 react.js
+
+Fede@MSI MINGW64 /c/DESARROLLO/bootcamp-java-2023/Desafio 3 (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+Fede@MSI MINGW64 /c/DESARROLLO/bootcamp-java-2023/Desafio 3 (main)
+$ git push
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Federico-Malacalza/WEBSITE.git
+   772a9f4..7c08754  main -> main
+
